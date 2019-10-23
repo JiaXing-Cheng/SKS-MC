@@ -135,7 +135,7 @@ public class PackInfoInit implements FuncService {
                                 + "FROM T_PM_PROJECT_DETAIL T1 "
                                 + "LEFT JOIN T_PM_PROJECT_BASE T2 ON T1.PROJECT_ID = T2.PROJECT_ID  "
                                 + "LEFT JOIN T_CO_ITEM T3 ON T3.CI_ITEM_CODE = T1.CBD_ITEM_CODE  "
-                                + "LEFT JOIN T_SAP_WH_CONFIG T4 ON T4.WORK_SPACE = T1.WORK_SPACE  "
+                                + "LEFT JOIN T_SAP_WH_CONFIG T4 ON T4.WORK_SPACE = T1.WORK_SPACE AND T4.WORK_CENTER = T2.PRODUCT_LINE "
                                 + "WHERE 1=1 AND T4.IS_COLOR = '1' AND T1.WORK_SPACE=? AND T1.CBD_ITEM_CODE=? AND T2.PROJECT_ID = ?  ";
                         map1 = modelService.queryForMap(sql, new Object[]{workSpace, itemCode, projectId});
                         dataList.add(map1);
@@ -144,7 +144,7 @@ public class PackInfoInit implements FuncService {
                                 + "FROM T_PM_PROJECT_DETAIL T1 "
                                 + "LEFT JOIN T_PM_PROJECT_BASE T2 ON T1.PROJECT_ID = T2.PROJECT_ID  "
                                 + "LEFT JOIN T_CO_ITEM T3 ON T3.CI_ITEM_CODE = T1.CBD_ITEM_CODE  "
-                                + "LEFT JOIN T_SAP_WH_CONFIG T4 ON T4.WORK_SPACE = T1.WORK_SPACE   "
+                                + "LEFT JOIN T_SAP_WH_CONFIG T4 ON T4.WORK_SPACE = T1.WORK_SPACE  AND T4.WORK_CENTER = T2.PRODUCT_LINE "
                                 + "WHERE 1=1 AND T4.IS_COLOR = '0' AND T1.WORK_SPACE=? AND T1.CBD_ITEM_CODE=? AND T2.PROJECT_ID = ?  ";
                         map1 = modelService.queryForMap(sql, new Object[]{workSpace, itemCode, projectId});
                         dataList.add(map1);
@@ -154,7 +154,7 @@ public class PackInfoInit implements FuncService {
                             + "FROM T_PM_PROJECT_DETAIL T1 "
                             + "LEFT JOIN T_PM_PROJECT_BASE T2 ON T1.PROJECT_ID = T2.PROJECT_ID  "
                             + "LEFT JOIN T_CO_ITEM T3 ON T3.CI_ITEM_CODE = T1.CBD_ITEM_CODE  "
-                            + "LEFT JOIN T_SAP_WH_CONFIG T4 ON T4.WORK_SPACE = T1.WORK_SPACE   "
+                            + "LEFT JOIN T_SAP_WH_CONFIG T4 ON T4.WORK_SPACE = T1.WORK_SPACE  AND T4.WORK_CENTER = T2.PRODUCT_LINE "
                             + "WHERE 1=1 AND T4.IS_COLOR = '1' AND T1.WORK_SPACE=? AND T1.CBD_ITEM_CODE=? AND T2.PROJECT_ID = ?  ";
                     map1 = modelService.queryForMap(sql, new Object[]{workSpace, itemCode, projectId});
                     dataList.add(map1);
