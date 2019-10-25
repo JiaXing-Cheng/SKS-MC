@@ -74,9 +74,7 @@ public class packToFeedAddPreImpl implements FuncService {
                 map1.put("WARE_HOUSE","0000" );
                 list.add(map1);
             }else {
-              /*
-                sql =sql+"  LEFT JOIN T_SAP_WH_CONFIG T4 ON T4.WORK_SPACE = T1.WORK_SPACE   " +
-                        "   AND T4.WORK_CENTER = T2.PRODUCT_LINE     ";*/
+
 
                 if(colCode !=null) {
                     if(stockCode.equals(colCode)) {
