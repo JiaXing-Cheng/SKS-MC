@@ -95,7 +95,7 @@ public class packToFeedAddPreImpl implements FuncService {
                     list.add(map1);
                 }
             }
-            ////
+            //
         }
         System.out.println("list:"+list);
         if (list.size() > 0) {
